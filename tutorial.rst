@@ -40,7 +40,7 @@ startproject
 プロジェクト内の settings.py を編集します。
 編集項目は以下の通りです。
 
-::
+.. code-block:: python
 
   DATABASE_ENGINE = 'sqlite3' # データベースエンジンはSQLite3
   DATABASE_NAME = 'data.db' # データベースファイル
@@ -54,7 +54,7 @@ guestbook アプリケーションをプロジェクトのディレクトリに�
 続いて settings.py の INSTALLED_APPS に guestbook を追加します。
 一緒に Django の管理アプリケーションもインストールしておきます。
 
-::
+.. code-block:: python
 
   INSTALLED_APPS = (
       'django.contrib.auth',
@@ -73,7 +73,7 @@ guestbook アプリケーションをプロジェクトのディレクトリに�
 アプリケーションのURLを有効にするため、プロジェクト内の urls.py を編集します。
 urls.py を次のように書き換えます。
 
-::
+.. code-block:: python
 
   from django.conf.urls.defaults import *
   
