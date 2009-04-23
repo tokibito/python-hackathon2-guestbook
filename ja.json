@@ -5,12 +5,7 @@
     "stdFont": "VL-PGothic-Regular",
     "stdBold": "VL-PGothic-Regular",
     "stdItalic": "VL-PGothic-Regular",
-    "stdBoldItalic": "ipam",
-    "stdMono": "VL-Gothic-Regular",
-    "stdMonoItalic": "Courier-Oblique",
-    "stdMonoBold": "Courier-Bold",
-    "stdMonoBoldItalic": "Courier-BoldOblique",
-    "stdSerif": "Times-Roman"
+    "stdMono": "VL-Gothic-Regular"
   },
   "styles" : [
     ["base" , {
