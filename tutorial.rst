@@ -116,3 +116,64 @@ urls.py を次のように書き換えます。
 Webブラウザから、 http://127.0.0.1:8000/ へアクセスするとゲストブックアプリケーションを利用できます。
 
 管理画面は http://127.0.0.1:8000/admin/ でアクセスできます。
+
+使うと幸せになれるアプリ
+========================
+
+django-debug-toolbar
+--------------------
+
+django-debug-toolbar を使うと、テンプレートやSQLのデバッグなどが楽になります。
+
+次のコマンドでインストールできます。
+
+::
+
+  easy_install django-debug-toolbar
+
+使用するには、 `settings.py` を編集します。
+
+.. code-block:: python
+
+  MIDDLEWARE_CLASSES = (
+      'django.middleware.common.CommonMiddleware',
+      'django.contrib.sessions.middleware.SessionMiddleware',
+      'django.contrib.auth.middleware.AuthenticationMiddleware',
+      'debug_toolbar.middleware.DebugToolbarMiddleware', # これを追加
+  )
+
+  INSTALLED_APPS = (
+      # 中略
+      'debug_toolbar', # これを追加
+  )
+
+  # 以下を追加
+  INTERNAL_IPS = (
+      '127.0.0.1',
+  )
+
+以上です。開発サーバを起動してWebブラウザでページを表示してみて下さい。サイドバーが追加されているはずです。
+
+django-command-extensions
+-------------------------
+
+django-command-extensions を使うと `manage.py` に便利なコマンドが多数追加されます。
+
+http://code.google.com/p/django-command-extensions/ からダウンロードできます。
+
+インストールは、ダウンロードしたアーカイブを展開し、そのディレクトリに移動して以下のコマンドを実行します。
+
+::
+
+  python setup.py install
+
+使用するには、 `settings.py` を編集します。
+
+.. code-block:: python
+
+  INSTALLED_APPS = (
+      # 中略
+      'django_extensions', # これを追加
+  )
+
+`manage.py` の help コマンドでコマンド一覧を見てみるとコマンドが増えていることが確認できます。
