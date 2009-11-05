@@ -1,12 +1,12 @@
-=====================================
-Django Hack-a-thon Disc.8 ハンズオンA
-=====================================
+=======================================
+Python Hack-a-thon #2 Django ハンズオン
+=======================================
 
 事前にインストールしておくもの
 ==============================
 
-- Python 2.5
-- Django 1.0
+- Python 2.5 以上
+- Django 1.1
 
 ゲストブックアプリを動かしてみよう
 ==================================
@@ -24,7 +24,7 @@ startproject
 
   django-admin.py startproject プロジェクト名
 
-プロジェクト名は半角英数で入力してください。ハイフンとアンダースコアは利用できます。
+プロジェクト名は半角英数で入力してください。アンダースコアは利用できます(Pythonのモジュール名として有効な名前を利用したほうが良いです)
 
 プロジェクト名とアプリケーションの名前が同じにならないように注意してください。
 
@@ -42,8 +42,11 @@ startproject
 
 .. code-block:: python
 
+  import os
+  BASE_DIR = os.path.dirname(os.path.abspath(__file__)) # プロジェクトディレクトリを取得
+
   DATABASE_ENGINE = 'sqlite3' # データベースエンジンはSQLite3
-  DATABASE_NAME = 'data.db' # データベースファイル
+  DATABASE_NAME = os.path.join(BASE_DIR, 'data.db') # データベースファイル
   TIME_ZONE = 'Asia/Tokyo' # タイムゾーンは東京
   LANGUAGE_CODE = 'ja' # 言語は日本語
 
@@ -81,8 +84,8 @@ urls.py を次のように書き換えます。
   admin.autodiscover()
   
   urlpatterns = patterns('',
-      (r'^admin/(.*)', admin.site.root),
-      (r'.*', include('guestbook.urls')),
+      (r'^admin/(.*)', include(admin.site.urls)),
+      (r'', include('guestbook.urls')),
   )
 
 データベースへ反映させる
@@ -108,7 +111,7 @@ urls.py を次のように書き換えます。
 
   python manage.py runserver
 
-デフォルトでは 127.0.0.1:8000 で起動されます。
+デフォルトでは 127.0.0.1:8000 で起動します。
 
 Webブラウザから、 http://127.0.0.1:8000/ へアクセスするとゲストブックアプリケーションを利用できます。
 

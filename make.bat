@@ -1,1 +1,1 @@
-rst2pdf -s ja.json,perldoc.json --font-folder="f:\windows\fonts" tutorial.rst
+rst2pdf -s ja.json --font-folder="%WINDIR%\fonts" tutorial.rst
