@@ -8,6 +8,7 @@ Python Hack-a-thon #2 Django ハンズオン
 - Python 2.5 or 2.6
 - Django 1.1
 - IPython
+- SQLite 3
 
 ドキュメントなど
 ================
