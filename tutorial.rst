@@ -92,7 +92,7 @@ urls.py を次のように書き換えます。
   admin.autodiscover()
   
   urlpatterns = patterns('',
-      (r'^admin/(.*)', include(admin.site.urls)),
+      (r'^admin/', include(admin.site.urls)),
       (r'', include('guestbook.urls')),
   )
 
